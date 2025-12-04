@@ -42,95 +42,35 @@ P.S. *Я понимаю, что я только начинаю свой путь
 + Реляционные
 + Нереляционные 
 
-Если кратко то Реляционная модель основанна на представление данных в виде таблиц, а нереляционная это все остальные виды. Краткое перечесление видов:
-
-1. Реляционные базы данных
-   - PostgreSQL
-   - MySQL
-   - Oracle Database
-   - Microsoft SQL Server
-   - IBM Db2
-   - SQLite
-<br>
-
-п
-
-<br>
-
-2. Нереляционные базы данных (NoSQL)
-   - Документные
-     - MongoDB
-     - Couchbase
-     - Amazon DocumentDB
-     - Firebase Firestore
-   - Колоночные (Column-family)
-     - Apache Cassandra
-     - Apache HBase
-     - Google BigTable
-     - ClickHouse
-   - Графовые
-     - Neo4j
-     - Amazon Neptune
-     - ArangoDB
-     - JanusGraph
-   - Ключ-значение
-     - Redis
-     - Amazon DynamoDB
-     - etcd
-     - Riak
-<br>
-
-п
-
-<br>
-
-3. Иерархические базы данных
-   - IBM IMS (Information Management System)
-   - Windows Registry
-   - XML-базы данных
-   - LDAP-серверы
-<br>
-
-п
-
-<br>
-
-4. Сетевые базы данных
-   - CA IDMS (Computer Associates IDMS)
-   - Oracle CODASYL DBMS
-   - Raima Database Manager
-   - TurboIMAGE
-<br>
-
-п
-
-<br>
-
-5. Объектно-ориентированные базы данных
-   - ObjectStore
-   - Versant Object Database
-   - db4o
-   - InterSystems Caché
-<br>
-
-п
-
-<br>
-
-6. Многомодельные базы данных (поддерживают несколько моделей)
-   - ArangoDB (документная, графовая, ключ-значение)
-   - Microsoft Azure Cosmos DB (документная, графовая, ключ-значение, колоночная)
-   - OrientDB (документная, графовая, объектная)
-   - Couchbase (документная, ключ-значение)
-<br>
-
-п
-
-<br>
-
-Скорее всего вы сильно испугались увидев такое большой список, но реальность немного спокойнее и реальных их всего несколько видов.
+Если кратко то Реляционная модель основанна на представление данных в виде таблиц, а нереляционная это все остальные виды.
 
 ![ВидыБД](pict3.png)
+
+А если всё же вдоваться в подробности этиъ видов огромное количество, в частности ниже я привёл таблицу с перечеслением видо БД, их описаниеми и представителячми. 
+
+### Типы баз данных: классификация и представители
+
+| Вид | Описание | Представители |
+|-----|----------|---------------|
+| **Реляционные (SQL)** | Таблицы со строками и столбцами, связанные через ключи *(Используют язык SQL)* | <ul><li>PostgreSQL</li><li>MySQL</li><li>Oracle Database</li><li>Microsoft SQL Server</li><li>IBM Db2</li><li>SQLite</li><li>MariaDB</li><li>Amazon Aurora</li></ul> |
+| **Документные (NoSQL)** | Хранение данных в формате документов (JSON/BSON) с гибкой схемой | <ul><li>MongoDB</li><li>Couchbase</li><li>Amazon DocumentDB</li><li>Firebase Firestore</li><li>RavenDB</li><li>Azure Cosmos DB (Document API)</li></ul> |
+| **Колоночные (Column-family)** | Хранение данных по колонкам, а не по строкам, для аналитических запросов | <ul><li>Apache Cassandra</li><li>Apache HBase</li><li>Google BigTable</li><li>ClickHouse</li><li>ScyllaDB</li><li>Amazon Keyspaces</li></ul> |
+| **Графовые** | Узлы (сущности) и ребра (связи) для работы с взаимосвязанными данными | <ul><li>Neo4j</li><li>Amazon Neptune</li><li>ArangoDB</li><li>JanusGraph</li><li>TigerGraph</li><li>OrientDB</li></ul> |
+| **Ключ-значение (Key-Value)** | Простая структура "ключ → значение" для быстрого доступа | <ul><li>Redis</li><li>Amazon DynamoDB</li><li>etcd</li><li>Riak</li><li>Berkeley DB</li><li>Memcached</li></ul> |
+| **Иерархические** | Древовидная структура данных с родительско-дочерними отношениями | <ul><li>IBM IMS</li><li>Windows Registry</li><li>XML-базы данных</li><li>LDAP-серверы</li><li>eXist-db</li><li>BaseX</li></ul> |
+| **Сетевые** | Расширение иерархической модели с поддержкой нескольких родителей | <ul><li>CA IDMS</li><li>Oracle CODASYL DBMS</li><li>Raima Database Manager</li><li>TurboIMAGE</li><li>Univac DMS-1100</li></ul> |
+| **Объектно-ориентированные** | Хранение объектов с методами, классами и наследованием | <ul><li>ObjectStore</li><li>Versant Object Database</li><li>db4o</li><li>InterSystems Caché</li><li>GemStone/S</li><li>Objectivity/DB</li></ul> |
+| **Многомодельные** | Поддержка нескольких моделей данных в одной системе | <ul><li>ArangoDB</li><li>Microsoft Azure Cosmos DB</li><li>OrientDB</li><li>MarkLogic</li><li>Couchbase</li><li>DataStax Enterprise</li></ul> |
+| **Временные/Time-Series** | Оптимизированы для хранения временных рядов данных | <ul><li>InfluxDB</li><li>TimescaleDB</li><li>Prometheus</li><li>OpenTSDB</li><li>QuestDB</li><li>TDengine</li></ul> |
+| **Поисковые/Search Engine** | Специализированные для полнотекстового поиска | <ul><li>Elasticsearch</li><li>Apache Solr</li><li>Algolia</li><li>MeiliSearch</li><li>Typesense</li><li>OpenSearch</li></ul> |
+| **Векторные** | Для хранения векторных эмбеддингов и семантического поиска | <ul><li>Pinecone</li><li>Weaviate</li><li>Qdrant</li><li>Milvus</li><li>Chroma</li><li>pgvector (расширение PostgreSQL)</li></ul> |
+
+<br>
+
+Скорее всего вы сильно испугались увидев такую большую таблицу, но для начала работы мы будем использовать реляционные БД, в частности PostgreSQL.
+Возможно вы сечйчас спросите почему именно PostgreSQL, а не другие?
+
+*Ответ просто как 3 рубля, я на работе и на учёбе постоянно работаю с SQL Server и немного уже от него устал, и хочу попробовать что-то новенькое* :)
 
 <br>
 
